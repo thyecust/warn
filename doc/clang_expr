@@ -1,7 +1,6 @@
 clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
-clang::AsTypeExpr,
 clang::AtomicExpr,
-clang::BlockExpr,  clang::DependentScopeDeclRefExpr,  clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
+clang::DependentScopeDeclRefExpr,  clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
 clang::FullExpr,
 clang::FunctionParmPackExpr,  clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, 
 clang::LambdaExpr,  clang::MaterializeTemporaryExpr, 
@@ -9,7 +8,6 @@ clang::NoInitExpr,
 clang::OpaqueValueExpr,
 clang::OverloadExpr,
 clang::PackExpansionExpr,
-
 clang::PredefinedExpr,
 clang::PseudoObjectExpr,
 clang::RequiresExpr,
@@ -73,4 +71,6 @@ clang::RecoveryExpr,
 clang::ConvertVectorExpr, __builtin_convertvector
 clang::MatrixSubscriptExpr, attribute((matrix_type(rows, columns)))
 clang::SourceLocExpr, __builtin_LINE()
+clang::BlockExpr, ^{ statement-body }
+clang::AsTypeExpr, __builtin_astype
 

@@ -1,21 +1,15 @@
 clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
 clang::AtomicExpr,
-clang::DependentScopeDeclRefExpr,  clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
+clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
 clang::FullExpr,
-clang::FunctionParmPackExpr,  clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, 
-clang::LambdaExpr,  clang::MaterializeTemporaryExpr, 
+clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, 
+clang::LambdaExpr,  
 clang::NoInitExpr, 
 clang::OpaqueValueExpr,
 clang::OverloadExpr,
-clang::PackExpansionExpr,
-clang::PredefinedExpr,
 clang::PseudoObjectExpr,
-clang::RequiresExpr,
-clang::ShuffleVectorExpr, clang::SizeOfPackExpr,
-
-clang::StmtExpr,
-clang::SubstNonTypeTemplateParmExpr, clang::SubstNonTypeTemplateParmPackExpr, clang::TypeTraitExpr,
-clang::UnaryExprOrTypeTraitExpr, clang::VAArgExpr.
+clang::TypeTraitExpr,
+clang::VAArgExpr.
 
 clang::DeclRefExpr,
 clang::UnaryOperator,
@@ -38,13 +32,26 @@ clang::ImaginaryLiteral,
 
 clang::OffsetOfExpr, [C99 7.17]
 clang::DesignatedInitExpr, [C99 6.7.8]
+clang::UnaryExprOrTypeTraitExpr, sizeof/alignof [C99 6.5.3.4]
+clang::PredefinedExpr, [C99 6.4.2.2]
+
+clang::MaterializeTemporaryExpr, prvalue temporary
 
 clang::CXXBindTemporaryExpr, clang::CXXBoolLiteralExpr, clang::CXXConstructExpr, clang::CXXDefaultArgExpr, clang::CXXDefaultInitExpr, clang::CXXDeleteExpr, clang::CXXDependentScopeMemberExpr, clang::CXXFoldExpr, clang::CXXInheritedCtorInitExpr, clang::CXXNewExpr,
 clang::CXXNoexceptExpr, clang::CXXNullPtrLiteralExpr, clang::CXXParenListInitExpr, clang::CXXPseudoDestructorExpr, clang::CXXRewrittenBinaryOperator, clang::CXXScalarValueInitExpr, clang::CXXStdInitializerListExpr, clang::CXXThisExpr,
 clang::CXXThrowExpr,
 clang::CXXTypeidExpr, clang::CXXUnresolvedConstructExpr, clang::CXXUuidofExpr,
 
+clang::FunctionParmPackExpr, f(Ts ...ts)
+clang::PackExpansionExpr,
+clang::SubstNonTypeTemplateParmExpr,
+clang::SubstNonTypeTemplateParmPackExpr,
+clang::SizeOfPackExpr,
+clang::DependentScopeDeclRefExpr, 
+
 clang::CoroutineSuspendExpr,  clang::DependentCoawaitExpr,
+
+clang::RequiresExpr, C++2a [expr.prim.req]
 
 clang::ConceptSpecializationExpr,
 le
@@ -62,6 +69,7 @@ clang::MSPropertyRefExpr, clang::MSPropertySubscriptExpr,
 clang::GNUNullExpr,
 clang::AddrLabelExpr,
 clang::ChooseExpr, __builtin_choose_expr
+clang::StmtExpr, ({int X=4; X;})
 
 clang::SYCLUniqueStableNameExpr,
 
@@ -73,4 +81,5 @@ clang::MatrixSubscriptExpr, attribute((matrix_type(rows, columns)))
 clang::SourceLocExpr, __builtin_LINE()
 clang::BlockExpr, ^{ statement-body }
 clang::AsTypeExpr, __builtin_astype
+clang::ShuffleVectorExpr, __builtin_shufflevector
 

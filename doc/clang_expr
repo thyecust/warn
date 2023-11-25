@@ -1,21 +1,20 @@
 clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
 clang::AsTypeExpr,
 clang::AtomicExpr,
-clang::BlockExpr, clang::ConceptSpecializationExpr, clang::ConvertVectorExpr,  clang::DependentScopeDeclRefExpr,  clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
+clang::BlockExpr,  clang::DependentScopeDeclRefExpr,  clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
 clang::FullExpr,
 clang::FunctionParmPackExpr,  clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, 
-clang::LambdaExpr,  clang::MaterializeTemporaryExpr, clang::MatrixSubscriptExpr,
+clang::LambdaExpr,  clang::MaterializeTemporaryExpr, 
 clang::NoInitExpr, 
 clang::OpaqueValueExpr,
 clang::OverloadExpr,
 clang::PackExpansionExpr,
-clang::ParenListExpr,
+
 clang::PredefinedExpr,
 clang::PseudoObjectExpr,
-clang::RecoveryExpr,
 clang::RequiresExpr,
 clang::ShuffleVectorExpr, clang::SizeOfPackExpr,
-clang::SourceLocExpr,
+
 clang::StmtExpr,
 clang::SubstNonTypeTemplateParmExpr, clang::SubstNonTypeTemplateParmPackExpr, clang::TypeTraitExpr,
 clang::UnaryExprOrTypeTraitExpr, clang::VAArgExpr.
@@ -49,6 +48,11 @@ clang::CXXTypeidExpr, clang::CXXUnresolvedConstructExpr, clang::CXXUuidofExpr,
 
 clang::CoroutineSuspendExpr,  clang::DependentCoawaitExpr,
 
+clang::ConceptSpecializationExpr,
+le
+
+clang::ParenListExpr,
+
 clang::ObjCArrayLiteral, clang::ObjCAvailabilityCheckExpr, clang::ObjCBoolLiteralExpr, clang::ObjCBoxedExpr, clang::ObjCDictionaryLiteral, clang::ObjCEncodeExpr, clang::ObjCIndirectCopyRestoreExpr, clang::ObjCIsaExpr, clang::ObjCIvarRefExpr, clang::ObjCMessageExpr, clang::ObjCPropertyRefExpr, clang::ObjCProtocolExpr, clang::ObjCSelectorExpr, clang::ObjCStringLiteral, clang::ObjCSubscriptRefExpr,
 
 clang::OMPArrayShapingExpr,
@@ -59,8 +63,14 @@ clang::MSPropertyRefExpr, clang::MSPropertySubscriptExpr,
 
 clang::GNUNullExpr,
 clang::AddrLabelExpr,
-clang::ChooseExpr,
+clang::ChooseExpr, __builtin_choose_expr
 
 clang::SYCLUniqueStableNameExpr,
 
 clang::TypoExpr,
+clang::RecoveryExpr,
+
+clang::ConvertVectorExpr, __builtin_convertvector
+clang::MatrixSubscriptExpr, attribute((matrix_type(rows, columns)))
+clang::SourceLocExpr, __builtin_LINE()
+

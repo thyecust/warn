@@ -2,13 +2,12 @@ clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
 clang::AtomicExpr,
 clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
 clang::FullExpr,
-clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, 
+clang::ImplicitValueInitExpr, 
 clang::LambdaExpr,  
 clang::NoInitExpr, 
 clang::OpaqueValueExpr,
 clang::OverloadExpr,
 clang::PseudoObjectExpr,
-clang::TypeTraitExpr,
 clang::VAArgExpr.
 
 clang::DeclRefExpr,
@@ -34,6 +33,7 @@ clang::OffsetOfExpr, [C99 7.17]
 clang::DesignatedInitExpr, [C99 6.7.8]
 clang::UnaryExprOrTypeTraitExpr, sizeof/alignof [C99 6.5.3.4]
 clang::PredefinedExpr, [C99 6.4.2.2]
+clang::GenericSelectionExpr, C11
 
 clang::MaterializeTemporaryExpr, prvalue temporary
 
@@ -51,6 +51,7 @@ clang::DependentScopeDeclRefExpr,
 
 clang::CoroutineSuspendExpr,  clang::DependentCoawaitExpr,
 
+clang::TypeTraitExpr, C++11
 clang::RequiresExpr, C++2a [expr.prim.req]
 
 clang::ConceptSpecializationExpr,

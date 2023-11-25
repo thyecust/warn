@@ -1,0 +1,100 @@
+u(E) = E is unsequenced
+uw(E, a) = E unsequenced writes a
+in(E, a) = a in E
+
+---
+
+state = {
+  in: [],
+  w: [],
+}
+
+def update_in(state, expr, a):
+  if a in state.w:
+      report(expr)
+  else if a not in state.in:
+      state.in.push(a)
+
+def update_w(state, expr, a):
+  if a in state.in:
+      report(expr)
+  else if a in state.w:
+      report(expr)
+  else:
+      state.w.push(a)
+
+def traverse(E, state):
+  match E:
+    case a:
+        update_in(state, E, a)
+    case incdec(a):
+        update_w(state, E, a)
+    case incdec(E1):
+        traverse(state, E1)
+    case (E1, E2):
+        state0 = state
+        traverse(state0, E1)
+        traverse(state, E2)
+    case (E1 op E2):
+        traverse(state, E1)
+        traverse(state, E2)
+    case f(E1, ..., En):
+        ?
+
+---
+
+u(incdec a)       = false
+u((E1, E2))       = u(E1) || u(E2) 
+u(E1 op E2)       = exist(a, in(Ei, a) && uw(Ej, a))
+u(f(E1, ..., En)) = exist(a, in(Ei, a) && uw(Ej, a))
+u(a = E)          = u(E) || uw(E, a) 
+                  ~ us(a += E) / us( a %= E) / etc.
+
+uw(a = E, a)          = true
+uw(a = E, b)          = uw(E, b)
+uw(E1 op E2, a)       = uw(E1, a) || uw(E2, a)
+uw(f(E1, ..., En), a) = false
+uw(incdec a, a)       = true
+uw(incdec a, b)       = false
+uw((E1, E2), a)       = uw(E2, a)
+
+---
+
+u(a + ++a)
+a. in(a, a) && uw(++a, a)
+= true
+
+u(a = ++a)
+= uw(++a, a)
+= true
+
+u(a + a++) = true
+u(a = a++) = true
+
+u((a++, a++))
+= u(a++)
+= false
+
+u(++a + ++a)
+a. in(a, ++a) && uw(++a, a)
+= true
+
+u(a = xs[++a])
+= uw(xs[++a], a)
+= true
+
+u(a = (++a, ++a))
+= uw((++a, ++a), a)
+= uw(++a, a)
+= true
+
+u(f(a, a))
+= false
+
+u(f(a = 0, a))
+a. in(a, a) && uw(a = 0, a)
+= true
+
+u(++a + f(++a, 0))
+a. in(f(++a, 0), a) && uw(++a, a)
+= true

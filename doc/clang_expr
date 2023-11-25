@@ -1,4 +1,4 @@
-clang::AbstractConditionalOperator, clang::AddrLabelExpr, clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
+clang::AddrLabelExpr, clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
 clang::AsTypeExpr,
 clang::AtomicExpr,
 clang::BlockExpr,
@@ -31,6 +31,7 @@ clang::CallExpr,
 clang::ArraySubscriptExpr,
 clang::ParenExpr,
 clang::CastExpr,
+clang::AbstractConditionalOperator,
 
 clang::IntegerLiteral,
 clang::FloatingLiteral,

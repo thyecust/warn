@@ -1,5 +1,6 @@
 u(E) = E is unsequenced
 uw(E, a) = E unsequenced writes a
+w(E, a)  = E writes a
 in(E, a) = a in E
 
 ---
@@ -45,8 +46,8 @@ def traverse(E, state):
 
 u(incdec a)       = false
 u((E1, E2))       = u(E1) || u(E2) 
-u(E1 op E2)       = exist(a, in(Ei, a) && uw(Ej, a))
-u(f(E1, ..., En)) = exist(a, in(Ei, a) && uw(Ej, a))
+u(E1 op E2)       = exist(a, in(Ei, a) && w(Ej, a))
+u(f(E1, ..., En)) = exist(a, in(Ei, a) && w(Ej, a))
 u(a = E)          = u(E) || uw(E, a) 
                   ~ us(a += E) / us( a %= E) / etc.
 

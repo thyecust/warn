@@ -1,15 +1,11 @@
-clang::AddrLabelExpr, clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
+clang::ArrayInitIndexExpr, clang::ArrayInitLoopExpr,  clang::ArrayTypeTraitExpr,
 clang::AsTypeExpr,
 clang::AtomicExpr,
-clang::BlockExpr,
-clang::ChooseExpr,
-clang::CompoundLiteralExpr, clang::ConceptSpecializationExpr, clang::ConvertVectorExpr,  clang::DependentScopeDeclRefExpr, clang::DesignatedInitExpr, clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
+clang::BlockExpr, clang::ConceptSpecializationExpr, clang::ConvertVectorExpr,  clang::DependentScopeDeclRefExpr,  clang::DesignatedInitUpdateExpr, clang::ExpressionTraitExpr, clang::ExtVectorElementExpr, 
 clang::FullExpr,
-clang::FunctionParmPackExpr,  clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, clang::InitListExpr,
+clang::FunctionParmPackExpr,  clang::GenericSelectionExpr,  clang::ImplicitValueInitExpr, 
 clang::LambdaExpr,  clang::MaterializeTemporaryExpr, clang::MatrixSubscriptExpr,
-clang::MemberExpr,
 clang::NoInitExpr, 
-clang::OffsetOfExpr,
 clang::OpaqueValueExpr,
 clang::OverloadExpr,
 clang::PackExpansionExpr,
@@ -22,23 +18,29 @@ clang::ShuffleVectorExpr, clang::SizeOfPackExpr,
 clang::SourceLocExpr,
 clang::StmtExpr,
 clang::SubstNonTypeTemplateParmExpr, clang::SubstNonTypeTemplateParmPackExpr, clang::TypeTraitExpr,
-clang::TypoExpr, clang::UnaryExprOrTypeTraitExpr, clang::VAArgExpr.
+clang::UnaryExprOrTypeTraitExpr, clang::VAArgExpr.
 
 clang::DeclRefExpr,
 clang::UnaryOperator,
 clang::BinaryOperator,
 clang::CallExpr,
+clang::InitListExpr,
 clang::ArraySubscriptExpr,
 clang::ParenExpr,
 clang::CastExpr,
 clang::AbstractConditionalOperator,
+clang::MemberExpr, [C99 6.5.2.3]
 
+clang::CompoundLiteralExpr, [C99 6.5.2.5]
 clang::IntegerLiteral,
 clang::FloatingLiteral,
 clang::CharacterLiteral,
 clang::FixedPointLiteral, 
 clang::StringLiteral,
 clang::ImaginaryLiteral,
+
+clang::OffsetOfExpr, [C99 7.17]
+clang::DesignatedInitExpr, [C99 6.7.8]
 
 clang::CXXBindTemporaryExpr, clang::CXXBoolLiteralExpr, clang::CXXConstructExpr, clang::CXXDefaultArgExpr, clang::CXXDefaultInitExpr, clang::CXXDeleteExpr, clang::CXXDependentScopeMemberExpr, clang::CXXFoldExpr, clang::CXXInheritedCtorInitExpr, clang::CXXNewExpr,
 clang::CXXNoexceptExpr, clang::CXXNullPtrLiteralExpr, clang::CXXParenListInitExpr, clang::CXXPseudoDestructorExpr, clang::CXXRewrittenBinaryOperator, clang::CXXScalarValueInitExpr, clang::CXXStdInitializerListExpr, clang::CXXThisExpr,
@@ -56,5 +58,9 @@ clang::OMPIteratorExpr,
 clang::MSPropertyRefExpr, clang::MSPropertySubscriptExpr,
 
 clang::GNUNullExpr,
+clang::AddrLabelExpr,
+clang::ChooseExpr,
 
 clang::SYCLUniqueStableNameExpr,
+
+clang::TypoExpr,
